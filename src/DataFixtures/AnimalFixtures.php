@@ -15,31 +15,41 @@ class AnimalFixtures extends Fixture
         $a1 = new Animal();
         $a1->setNom('Chien')
             ->setDescription('Un animal domestique')
-            ->setImage('chien.png');
+            ->setImage('chien.png')
+            ->setPoid(12)
+            ->setDangereux(false);
         $manager->persist($a1);
 
         $a2 = new Animal();
         $a2->setNom('Cochon')
             ->setDescription('Un animal d\'élévage')
-            ->setImage('cochon.png');
+            ->setImage('cochon.png')
+            ->setPoid(30)
+            ->setDangereux(false);
         $manager->persist($a2);
 
         $a3 = new Animal();
         $a3->setNom('Serpent')
             ->setDescription('Un animal dangereux')
-            ->setImage('serpent.png');
+            ->setImage('serpent.png')
+            ->setPoid(3)
+            ->setDangereux(true);
         $manager->persist($a3);
 
         $a4 = new Animal();
         $a4->setNom('Crocodile')
             ->setDescription('Un animal trés dangereux')
-            ->setImage('crocodile.png');
+            ->setImage('crocodile.png')
+            ->setPoid(110)
+            ->setDangereux(true);
         $manager->persist($a4);
 
         $a5 = new Animal();
         $a5->setNom('Requin')
             ->setDescription('Un animal marin trés dangereux')
-            ->setImage('requin.png');
+            ->setImage('requin.png')
+            ->setPoid(150)
+            ->setDangereux(true);
         $manager->persist($a5);
 
         $manager->flush();
