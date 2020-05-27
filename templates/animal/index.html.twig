@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animaux{% endblock %}
+
+{% block monTitre %}Voici la liste des animaux{% endblock %}
+{% block body %}
+
+    {% for animal in animaux %}
+        <div class="row align-items-center m-2 p-2">
+            <img class="col-2" src="{{ asset("images/" ~ animal.image)}}" alt="">
+            <div class="col-2">{{ animal.nom }}</div>
+            <div class="col-2">{{ animal.description }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}
