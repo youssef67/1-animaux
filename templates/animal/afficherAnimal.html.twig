@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animal{% endblock %}
+
+{% block monTitre %}Voici la fiche de {{ animal.nom }}{% endblock %}
+{% block body %}
+<div class="row">
+    <div class="col-2">
+        <img src="{{ asset("images/" ~ animal.image)}}" alt="">
+    </div>
+    <div class="col-auto">
+        <h2>{{ animal.nom }}</h2>
+        <div>{{ animal.description}}</div>
+        <div>Dangereux : 
+            {% if animal.dangereux %}
+                <span class="badge badge-danger">OUI</span>
+            {% else %}
+            <span class="badge badge-success">NON</span>
+            {% endif %}
+        </div>
+        <div>Poids : {{ animal.poid }} Kg</div>
+    </div>    
+</div>
+{% endblock %}
